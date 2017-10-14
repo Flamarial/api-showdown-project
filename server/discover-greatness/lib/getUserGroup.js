@@ -20,34 +20,31 @@ const getAllFriends = function(user_key) {
                 throw (err);
             } else {
                 rows.forEach((obj) => {
-                    friends.push(obj);
-                    console.log(obj.friend_id);
+                    friends.push(obj.friend_id);
                 })
-            }
-            console.log(friends);
-        });
-        
-        // if (friends && friends.length > 0) {
-            friends.forEach((id) => {
-                sendQuery(getUserQuery, id, (err, rows) => {
-                    if (err) {
-                        throw (err);
-                    } else {
-                        console.log(rows);
-                        rows.forEach((obj) => {
-                            userFriends.push(obj);
+
+                if (friends && friends.length > 0) {
+                    friends.forEach((id) => {
+                        sendQuery(getUserQuery, id, (err, rows) => {
+                            if (err) {
+                                throw (err);
+                            } else {                        
+                                rows.forEach((obj) => {
+                                    userFriends.push(obj);
+                                })
+
+                                console.log("Final results: ");
+                                console.log(userFriends);
+                                return userFriends;
+                            }
                         })
-                    }
-                })
-            })
-        // }
-        
+                    })
+                }
+            }
+        });
     } else {
         console.log("There was an issue accessing the database.");
     }
-    console.log("Final results: ");
-    console.log(userFriends);
-    return userFriends;
 }
 
 getAllFriends(1);
