@@ -1,17 +1,22 @@
 {
-  "name": "discover-greatness",
-  "version": "0.0.0",
+  "name": "wallet-server",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
+    "config": "^1.26.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "express": "~4.15.5",
+    "express": "^4.15.5",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
     "serve-favicon": "~2.4.5"
-  }
+  },
+  "description": "Node server interfacing with discover wallet",
+  "main": "app.js",
+  "author": "hajin's disciples",
+  "license": "ISC"
 }
