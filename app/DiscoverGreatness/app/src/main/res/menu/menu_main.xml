@@ -2,12 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/addCardButton"
+        android:id="@+id/addCreditCardButton"
         android:title="@string/add"
         android:icon="@drawable/ic_add_credit_card"
         app:showAsAction="always" />
     <item
         android:id="@+id/aboutButton"
         android:title="@string/about"
-        app:showAsAction="never" />
+        android:icon="@drawable/ic_info"
+        app:showAsAction="always" />
 </menu>

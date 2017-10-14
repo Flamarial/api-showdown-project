@@ -1,11 +1,14 @@
 <resources>
-
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/discover_orange</item>
-        <item name="colorPrimaryDark">@color/discover_orange_dark</item>
-        <item name="colorAccent">@color/yellow</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:textColor">@color/text_default</item>
+
+        <!-- Support library compatibility -->
+        <item name="windowActionBarOverlay">true</item>
     </style>
 
+    <style name="PalActionBarTheme" parent="AppTheme">
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
 </resources>
