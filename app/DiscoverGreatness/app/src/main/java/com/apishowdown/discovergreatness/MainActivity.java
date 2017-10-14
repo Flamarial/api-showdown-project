@@ -8,17 +8,57 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+
+import java.util.ArrayList;
 
 import io.card.payment.CardIOActivity;
+import it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final int CREDIT_CARD_SCAN_REQUEST_CODE = 9001;
 
+    private CreditCardArrayAdapter arrayAdapter;
+    private FeatureCoverFlow coverFlow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        arrayAdapter = new CreditCardArrayAdapter(this);
+
+        coverFlow = (FeatureCoverFlow) findViewById(R.id.coverflow);
+        coverFlow.setAdapter(arrayAdapter);
+
+        ArrayList<CreditCard> creditCards = new ArrayList<>();
+        creditCards.add(new CreditCard("0123 4567 8900 0000", "01/20"));
+        creditCards.add(new CreditCard("1111 2222 3333 4444", "01/21"));
+        creditCards.add(new CreditCard("8888 8888 8888 8888", "01/22"));
+        creditCards.add(new CreditCard("1234 1234 1234 1234", "01/23"));
+
+        arrayAdapter.setData(creditCards);
+
+        coverFlow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //TODO CoverFlow item clicked
+            }
+        });
+
+        coverFlow.setOnScrollPositionListener(new FeatureCoverFlow.OnScrollPositionListener() {
+            @Override
+            public void onScrolledToPosition(int position) {
+                //TODO CoverFlow stopped to position
+            }
+
+            @Override
+            public void onScrolling() {
+                //TODO CoverFlow began scrolling
+            }
+        });
     }
 
     @Override

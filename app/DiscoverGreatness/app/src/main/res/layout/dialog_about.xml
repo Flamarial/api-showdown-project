@@ -11,14 +11,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="@dimen/heading_text"
-        android:text="@string/app_name" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dialog_item_spacing"
+        android:textColor="@color/text_disabled"
         android:text="@string/copyright_message" />
 
     <TextView
@@ -34,12 +28,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dialog_item_spacing"
         android:textStyle="bold"
+        android:textColor="@color/text_disabled"
         android:text="Add credit card icon" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollHorizontally="false"
+        android:textColor="@color/text_disabled"
         android:text="Freepik from www.flaticon.com" />
 
 </LinearLayout>
