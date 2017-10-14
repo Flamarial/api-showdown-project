@@ -37,7 +37,7 @@ const seedUsers = heredoc(function () {/*
 const makeFriendships = function() {
     let allUsers;
     const getAllUsers = heredoc(function () {/*
-        SELECT users.last_name, users.key FROM users;
+        SELECT users.key FROM users;
     */});
 
     const seedFriendships = heredoc(function () {/*
@@ -45,32 +45,37 @@ const makeFriendships = function() {
         VALUES ($user, $friend1), ($user, $friend2), ($user, $friend3);
     */});
 
-    sendQuery(getAllUsers, null, (err, rows) => {
+    sendQuery(getAllUsers, [], (err, rows) => {
         if (err) {
             throw (err);
         } else {
             allUsers = rows;
+            // [ { key: 1 }, { key: 2 }, { key: 3 }, { key: 4 } ]
+
+            if (allUsers && allUsers.length > 0) {
+                for (let i = 0; i < allUsers.length; i++) {
+                    let friends = allUsers.filter((userObj) => { return userObj.key !== (i+1); });
+                    console.log(friends);
+                    sendQuery(seedFriendships, {
+                        $user: allUsers[i].key,
+                        $friend1: friends.pop().key,
+                        $friend2: friends.pop().key,
+                        $friend3: friends.pop().key
+                    }, (err) => {
+                        if (err) {
+                            throw (err);
+                        }
+                    })
+                }
+            }
         }
     });
 
-    if (allUsers) {
-        for (let i = 0; i < allUsers.length - 1; i++) {
-            let friends = allUsers.filter((user) => { user !== allUsers[i] });
-            sendQuery(seedFriendships, {
-                $friend1: friends.pop(),
-                $friend2: friends.pop(),
-                $friend3: friends.pop()
-            }, (err) => {
-                if (err) {
-                    throw (err);
-                }
-            })
-        }
-    }
+    
 }
 
 if (!(sendQuery instanceof Error)) {
-    sendQuery(seedUsers, null, (err) => {
+    sendQuery(seedUsers, [], (err) => {
         if (err) {
             throw (err) 
         } else {
