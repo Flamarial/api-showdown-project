@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/discover_orange"
+    android:id="@+id/drawerLayout"
     tools:context="com.apishowdown.discovergreatness.MainActivity">
 
     <!-- The main content view -->
