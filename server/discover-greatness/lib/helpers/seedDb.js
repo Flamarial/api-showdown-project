@@ -3,28 +3,6 @@
 const heredoc = require('heredoc'),
     sendQuery = require('./accessDb');
 
-    // CREATE TABLE users (
-    //     key INTEGER PRIMARY KEY,
-    //     first_name text,
-    //     last_name text,
-    //     wallet_id text,
-    //     info text);
-
-    // CREATE TABLE transactions (
-    //     key integer primary key,
-    //     merchant text,
-    //     description text,
-    //     amount float,
-    //     transaction_user integer,
-    //     foreign key(transaction_user) references users(key));
-
-    // CREATE TABLE friendships (
-    //     user_id integer,
-    //     friend_id integer,
-    //     key integer primary key,
-    //     foreign key(user_id) references users(key),
-    //     foreign key(friend_id) references users(key));
-
 const seedUsers = heredoc(function () {/*
     INSERT INTO users ( first_name, last_name, wallet_id, info )
     VALUES
@@ -69,9 +47,7 @@ const makeFriendships = function() {
                 }
             }
         }
-    });
-
-    
+    }); 
 }
 
 if (!(sendQuery instanceof Error)) {

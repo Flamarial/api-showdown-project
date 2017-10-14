@@ -19,7 +19,7 @@ const sendQuery = function(query, options, cb) {
             console.log("Query ran succesfully.");
             cb(null, rows);
         }
-    })
+    });
 }
 
 module.exports = sendQuery;

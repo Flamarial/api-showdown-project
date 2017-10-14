@@ -47,5 +47,5 @@ const getAllFriends = function(user_key) {
     }
 }
 
-getAllFriends(1);
+module.export = getAllFriends;
 
