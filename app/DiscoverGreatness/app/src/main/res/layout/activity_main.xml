@@ -9,26 +9,33 @@
     tools:context="com.apishowdown.discovergreatness.MainActivity">
 
     <!-- The main content view -->
-    <it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow
-        android:id="@+id/coverflow"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:coverHeight="@dimen/credit_card_height"
-        app:coverWidth="@dimen/credit_card_width"
-        app:maxScaleFactor="1.5"
-        app:reflectionGap="0px"
-        app:rotationThreshold="0.5"
-        app:scalingThreshold="0.5"
-        app:spacing="0.575" />
+        android:layout_height="match_parent">
+
+        <it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow
+            android:id="@+id/coverflow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:coverHeight="@dimen/credit_card_height"
+            app:coverWidth="@dimen/credit_card_width"
+            app:maxScaleFactor="1.5"
+            app:reflectionGap="0px"
+            app:rotationThreshold="0.5"
+            app:scalingThreshold="0.5"
+            app:spacing="0.575" />
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/actionBar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:minHeight="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:theme="@style/PalActionBarTheme" />
+
+    </FrameLayout>
 
     <!-- The navigation drawer -->
-    <LinearLayout
-        android:layout_width="@dimen/drawer_width"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_gravity="left"
-        android:background="@android:color/white">
-
-    </LinearLayout>
+    <include layout="@layout/layout_drawer" />
 
 </android.support.v4.widget.DrawerLayout>

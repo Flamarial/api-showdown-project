@@ -7,4 +7,6 @@
     <string name="about_this_app">About This App</string>
     <string name="drawer_open">Open app menu</string>
     <string name="drawer_close">Close app menu</string>
+
+    <string name="home">Home</string>
 </resources>

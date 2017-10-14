@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/drawer_width"
+    android:layout_height="match_parent"
+    android:layout_gravity="left"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/drawerHeaderBackground"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_app_menu" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/drawerHeaderBackground"
+        android:layout_alignRight="@+id/drawerHeaderBackground"
+        android:layout_marginTop="@dimen/drawer_padding_vertical"
+        android:layout_marginBottom="@dimen/drawer_padding_vertical"
+        android:layout_marginLeft="@dimen/drawer_padding_horizontal"
+        android:layout_marginRight="@dimen/drawer_padding_horizontal"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:text="@string/app_name"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/drawerHeaderBackground"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/drawer_padding_vertical"
+            android:paddingBottom="@dimen/drawer_padding_vertical"
+            android:paddingLeft="@dimen/drawer_padding_horizontal"
+            android:paddingRight="@dimen/drawer_padding_horizontal"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/ic_home"
+            android:drawablePadding="@dimen/menu_item_text_spacing"
+            android:textSize="@dimen/menu_item_text"
+            android:text="@string/home" />
+
+    </LinearLayout>
+
+</RelativeLayout>
