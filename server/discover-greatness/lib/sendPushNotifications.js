@@ -14,6 +14,7 @@ const sendPushNotifications = function(registrationToken, restaurantData){
       contentAvailable: true,
       delayWhileIdle: true,
       timeToLive: 3,
+      senttime_: "now",
       dryRun: false,
       data: restaurantData,
       notification: {
