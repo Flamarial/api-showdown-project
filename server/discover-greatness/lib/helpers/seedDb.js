@@ -3,28 +3,64 @@
 const heredoc = require('heredoc'),
     sendQuery = require('./accessDb');
 
+const createTables = heredoc(function() {/*
+    CREATE TABLE friendships (
+        user_id integer,
+        friend_id integer,
+        key integer primary key,
+        foreign key(user_id) references users(key),
+        foreign key(friend_id) references users(key)
+    );
+
+    CREATE TABLE location (
+        key integer primary key,
+        longitude float,
+        latitude float,
+        user_id integer,
+        foreign key(user_id) references users(key)
+    );
+    CREATE TABLE users (
+        key integer primary key,
+        last_name text,
+        first_name text,
+        wallet_id text,
+        info text,
+        image_url text
+        location integer,
+        foreign key(location) references locations(key)
+    );
+    CREATE TABLE transactions (
+        key integer primary key,
+        merchant text,
+        description text,
+        amount float,
+        transaction_user integer,
+        foreign key(transaction_user) references users(key)
+    );
+*/});
+
 const seedUsers = heredoc(function () {/*
-    INSERT INTO users ( first_name, last_name, wallet_id, info )
+    INSERT INTO users ( first_name, last_name, wallet_id, info, image_url )
     VALUES
-    ('Kevin', 'Mark', '1234', 'KMONEEEEEY'),
-    ('Gabi', 'Gustilo', '1235', 'G-MEISTER'),
-    ('Scotty', 'Chou', '1236', 'MPCHOU'),
-    ('Hajin', 'Lee', '1237', 'HAJINI');
+    ('Kevin', 'Mark', '1234', 'KMONEEEEEY', 'https://media-exp2.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAz5AAAAJDgwZDg4NzM1LWJlYTMtNGI1OC04NTJlLThmMWE5M2QxMjE0Yw.jpg'),
+    ('Gabi', 'Gustilo', '1235', 'G-MEISTER', 'https://media-exp2.licdn.com/media/AAEAAQAAAAAAAAcZAAAAJGIwN2E2Y2UwLTZiYmEtNDgzOC1hYmRiLTI3MTVmZGYwNjQzYg.jpg'),
+    ('Scotty', 'Chou', '1236', 'MPCHOU', 'https://media-exp2.licdn.com/media/AAEAAQAAAAAAAAUkAAAAJGE3MjQ3OWYxLTU1NWEtNDI3OC04NzI3LTY0Mzk4MmQ3ZWI2Zg.jpg (12kB)'),
+    ('Hajin', 'Lee', '1237', 'HAJINI', 'https://media-exp2.licdn.com/media/p/7/000/1d1/25c/1975557.jpg');
 */});
 
 const seedLocations = heredoc(function () {/*
-    INSERT INTO location ( longitude, latitude, user_id )
+    INSERT INTO locations ( longitude, latitude, user_id )
     VALUES
-    (0.0, 0.0, 1),
-    (0.0, 0.0, 2),
-    (0.0, 0.0, 3),
-    (0.0, 0.0, 4);
+    (41.876742, -87.624386, 1),
+    (41.892689, -87.672056, 2),
+    (41.948485, -87.663251, 3),
+    (41.915427, -87.635601, 4);
 */});
 
 const updateUsersWithLocation = function() {
     let locations;
     const getAllLocations = heredoc(function () {/*
-        SELECT * FROM location;
+        SELECT * FROM locations;
     */});
 
     const updateUserWithLocation = heredoc(function () {/*
@@ -91,6 +127,12 @@ const makeFriendships = function() {
 }
 
 if (!(sendQuery instanceof Error)) {
+    sendQuery(createTables, [], (err) => {
+        if (err) {
+            throw (err) 
+        } 
+    });
+
     sendQuery(seedUsers, [], (err) => {
         if (err) {
             throw (err) 

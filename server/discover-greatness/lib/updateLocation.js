@@ -10,7 +10,7 @@ const getUserQuery = heredoc(function () {/*
 */});
 
 const updateLocationQuery = heredoc(function () {/*
-    UPDATE location
+    UPDATE locations
     SET latitude = $latitude, longitude = $longitude
     WHERE user_id = $user_id;
 */});
@@ -23,7 +23,7 @@ const updateUserWithLocationQuery = heredoc(function () {/*
 
 const getAllLocations = heredoc(function () {/*
     SELECT key
-    FROM location
+    FROM locations
     WHERE user_id = ?;
 */});
 
