@@ -8,7 +8,7 @@ const updateLocation = require('../lib/sendPushNotifications');
 router.post('/registrationToken', function(req, res, next) {
     let body = req.body;
     console.log(body.gcm_registration_token);
-    res.send().status(404);
+    res.send().status(404).send({"hello": "world"});
 });
 
 module.exports = router;
