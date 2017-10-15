@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="text_default">#222222</color>
-    <color name="text_disabled">#888888</color>
+    <color name="text_default">#555555</color>
+    <color name="text_disabled">#CCCCCC</color>
     <color name="discover_orange">#FF6600</color>
     <color name="discover_orange_dark">#EE602D</color>
     <color name="yellow">#FFE000</color>
