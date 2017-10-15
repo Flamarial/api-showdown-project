@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var friends = require('./routes/friends');
-var updateFriend = require('./routes/updateFriend');
+var deleteFriend = require('./routes/deleteFriend');
+var addFriend = require('./routes/addFriend');
 var updateLocation = require('./routes/updateLocation');
 var getLocation = require('./routes/getLocation');
 
@@ -28,7 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', index);
 app.get('/friends', friends);
-app.post('/updateFriend', updateFriend);
+app.post('/addFriend', addFriend);
+app.post('/deleteFriend', deleteFriend);
 app.post('/updateLocation', updateLocation);
 app.get('/getLocation', getLocation);
 

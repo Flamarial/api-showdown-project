@@ -49,7 +49,6 @@ const calculateLocation = function(userInfo, cb) {
     }
 }
 
-
 const getLocation = function(userObj, cb) {
     console.log(userObj);
     let user, friends;
