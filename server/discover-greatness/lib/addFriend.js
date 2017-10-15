@@ -65,7 +65,9 @@ const addFriend = function(first, last, wallet_id, cb) {
                             if (err) {
                                 cb(err);
                             } else {
-                                cb(null, results);
+                                console.log('friend');
+                                console.log(friend);
+                                cb(null, friend);
                             }
                         })
                     } else {

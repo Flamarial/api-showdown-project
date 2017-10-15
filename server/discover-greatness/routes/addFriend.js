@@ -14,10 +14,10 @@ router.post('/addFriend', function(req, res, next) {
         addFriend(body.first_name, body.last_name, body.wallet_id, (err, results) => {
             if (err) {
                 console.log('friend not set');
-                res.status(500).send('Friend not set.');
+                res.status(500).send({"error": 'Friend not set.'});
             } else {
                 console.log('friend set');
-                res.status(200).send('Friend set.')
+                res.status(200).send(results);
             }
         });
     } else {
