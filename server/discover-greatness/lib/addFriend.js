@@ -53,7 +53,9 @@ const addFriend = function(first, last, wallet_id, cb) {
                     cb(err);
                 } else {
                     friend = friend;
+                    console.log('user');
                     console.log(user);
+                    console.log('friend');
                     console.log(friend);
                     if (user && friend) {
                         sendQuery(addFriendship, {
@@ -63,9 +65,13 @@ const addFriend = function(first, last, wallet_id, cb) {
                             if (err) {
                                 cb(err);
                             } else {
-                                cb(null, results);
+                                console.log('friend');
+                                console.log(friend);
+                                cb(null, friend);
                             }
                         })
+                    } else {
+                        cb("Can't find user or friend");
                     }
                 }
             });
