@@ -3,6 +3,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowActionBarOverlay">true</item>
         <item name="android:textColor">@color/text_default</item>
+        <item name="android:statusBarColor">@color/discover_orange_dark</item>
 
         <!-- Support library compatibility -->
         <item name="windowActionBarOverlay">true</item>
