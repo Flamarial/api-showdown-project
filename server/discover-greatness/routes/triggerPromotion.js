@@ -10,4 +10,9 @@ router.get('/triggerPromotion', function(req, res, next) {
     res.send().status(200);
 });
 
+router.get('/triggerSecondPromotion', function(req, res, next) {
+    location.secondExample();
+    res.send().status(200);
+});
+
 module.exports = router;

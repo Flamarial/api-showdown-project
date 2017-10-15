@@ -14,13 +14,13 @@ const sendPushNotifications = function(registrationToken, restaurantData){
       contentAvailable: true,
       delayWhileIdle: true,
       timeToLive: 3,
+      senttime_: "now",
       dryRun: false,
-      data: restaurantData,
-      notification: {
-          title: "New Rewards",
-          icon: "ic_launcher",
-          body: "Your friend recently bought coffee and now you get %20 off!"
-      }
+      name: restaurantData.name,
+      address: restaurantData.address,
+      offerMessage: restaurantData.offerMessage,
+      expirationMessage: restaurantData.expirationMessage,
+      title: "New Rewards"
   });
 
   // Specify which registration IDs to deliver the message to
