@@ -1,7 +1,7 @@
 'use strict';
 
 const heredoc = require('heredoc'),
-sendQuery = require('./helpers/accessDb');
+sendQuery = require('./helpers/accessDb').sendQuery;
 
 const getUserQuery = heredoc(function () {/*
     SELECT key
