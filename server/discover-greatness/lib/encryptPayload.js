@@ -39,7 +39,6 @@ function generateEncryptedKey() {
 }
 
 function generateJwePayload(encryptionKey) {
-    console.log('hellodfadf');
     var jweHeader = "";
     var contentEncryptionKey = "";
     var contentEncryptionIV = "";
@@ -55,27 +54,19 @@ function generateJwePayload(encryptionKey) {
 
     var jwk = rsaPemToJwk(PEM,{}, 'public');
     var buffer = new Buffer(encryptionKey, "base64")
-    console.log('buffer');
-    console.log(buffer);
-    console.log('jwk');
-    console.log(jwk);
     contentEncryptionKey = encryptionKey;
-    console.log('encryptionKey...');
-    console.log(contentEncryptionKey);
-
-    console.log("PUB_KEY");
-    console.log(PUB_KEY);
-    ////TODO: complete contentEncryptionKey;
 
     var buffer = nodejose.util.randomBytes(16);
     contentEncryptionIV = nodejose.util.base64url.encode(buffer);
       
     var jwePayload = base64(jweHeader) + "." + base64(contentEncryptionKey) + "." +
         base64(contentEncryptionIV) + "." + base64(encryptedContent) + "." + base64(authenticationTag);
+        
+    return jwePayload;
 }
 
 function base64(stringToEncode) {
     return new Buffer(stringToEncode).toString('base64');
 }
 
-generateEncryptedKey();
+module.exports = {"generateEncryptionKey": generateEncryptionKey};
