@@ -1,18 +1,24 @@
-var ClientOAuth2 = require('client-oauth2')
+var request = require('request')
 
-var auth = new ClientOAuth2({
-    clientId: 'l7xx516deac1b17b4087b891bb381ebab8ac',
-    clientSecret: '359e4a885b474e00ac2712f4f8fd8032',
-    accessTokenUri: 'https://apis.discover.com/auth/oauth/v2/token',
-    scopes: ['HCE']
-})
+var auth = "Basic " + new Buffer("l7xx516deac1b17b4087b891bb381ebab8ac:359e4a885b474e00ac2712f4f8fd8032").toString('base64');
 
-var token = auth.createToken();
-
-// token.sign({
-//     method: 'get',
-//     url: ''
-//   })
-
-console.log(token);
-console.log("TESTING!");
+request({
+    url: 'https://apis.discover.com/auth/oauth/v2/token',
+    method: 'POST',
+    form: {
+        'grant_type': 'client_credentials',
+        scope: "HCE"
+    },
+    headers: {
+        Authorization: auth,
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cache-Control": "no-cache"
+    }
+}, function(err, res) {
+    if (err) {
+        console.log(err);
+    }
+    var json = JSON.parse(res.body);
+    console.log("response");
+    console.log(json);
+});
