@@ -1,4 +1,4 @@
-package com.apishowdown.discovergreatness;
+package com.apishowdown.discovergreatness.social;
 
 public class Friend {
     private String firstName;

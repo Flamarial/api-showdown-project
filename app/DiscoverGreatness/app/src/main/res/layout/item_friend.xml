@@ -19,7 +19,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/friendPicture"
+                android:id="@+id/friendPictureBackground"
                 android:layout_width="@dimen/friend_image_size"
                 android:layout_height="@dimen/friend_image_size"
                 android:layout_margin="@dimen/card_view_item_padding"
@@ -28,19 +28,20 @@
                 android:src="@drawable/ic_account" />
 
             <ImageView
+                android:id="@+id/friendPicture"
                 android:layout_width="@dimen/friend_image_size"
                 android:layout_height="@dimen/friend_image_size"
-                android:layout_alignTop="@+id/friendPicture"
-                android:layout_alignBottom="@+id/friendPicture"
-                android:layout_alignLeft="@+id/friendPicture"
-                android:layout_alignRight="@+id/friendPicture"
+                android:layout_alignTop="@+id/friendPictureBackground"
+                android:layout_alignBottom="@+id/friendPictureBackground"
+                android:layout_alignLeft="@+id/friendPictureBackground"
+                android:layout_alignRight="@+id/friendPictureBackground"
                 android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/friendName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/friendPicture"
+                android:layout_toRightOf="@+id/friendPictureBackground"
                 android:layout_marginTop="@dimen/card_view_item_padding"
                 android:textSize="@dimen/card_view_item_name"
                 android:textStyle="bold" />

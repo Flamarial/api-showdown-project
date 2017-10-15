@@ -1,4 +1,4 @@
-package com.apishowdown.discovergreatness;
+package com.apishowdown.discovergreatness.social;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -16,6 +16,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.apishowdown.discovergreatness.R;
 
 public class SocialFragment extends Fragment {
 

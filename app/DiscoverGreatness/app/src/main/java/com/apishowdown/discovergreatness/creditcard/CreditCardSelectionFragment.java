@@ -1,4 +1,4 @@
-package com.apishowdown.discovergreatness;
+package com.apishowdown.discovergreatness.creditcard;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+
+import com.apishowdown.discovergreatness.R;
 
 import java.util.ArrayList;
 

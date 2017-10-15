@@ -1,4 +1,4 @@
-package com.apishowdown.discovergreatness;
+package com.apishowdown.discovergreatness.social;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import com.apishowdown.discovergreatness.R;
 
 import java.util.ArrayList;
 
@@ -35,6 +37,7 @@ public class SocialGroupsFragment extends Fragment {
 
         ListView groupsList = (ListView) rootView.findViewById(R.id.groupsList);
         groupsList.setAdapter(adapter);
+        groupsList.setEmptyView(rootView.findViewById(R.id.emptyGroupsMessage));
 
         return rootView;
     }

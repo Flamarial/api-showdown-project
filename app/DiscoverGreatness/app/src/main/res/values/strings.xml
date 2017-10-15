@@ -14,4 +14,9 @@
     <string name="friends">Friends</string>
     <string name="add_group">Add Group</string>
     <string name="add_friend">Add Friend</string>
+    <string name="my_offers">My Offers</string>
+    <string name="no_groups_found_message">No groups found. Add one to get started!</string>
+    <string name="no_friends_found_message">No friends found. Add one to get started!</string>
+    <string name="no_offers_found_message">No offers found. Check back soon!</string>
+    <string name="expiration_date_message">Expires %1$s</string>
 </resources>

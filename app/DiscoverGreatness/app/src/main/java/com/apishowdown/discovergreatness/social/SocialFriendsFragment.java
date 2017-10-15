@@ -1,4 +1,4 @@
-package com.apishowdown.discovergreatness;
+package com.apishowdown.discovergreatness.social;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import com.apishowdown.discovergreatness.MainActivity;
+import com.apishowdown.discovergreatness.R;
 
 import java.util.ArrayList;
 
@@ -34,11 +37,12 @@ public class SocialFriendsFragment extends Fragment {
         friends.add(new Friend("John", "Doe", null));
         friends.add(new Friend("John", "Doe", null));
 
-        FriendArrayAdapter adapter = new FriendArrayAdapter(getActivity());
+        FriendArrayAdapter adapter = new FriendArrayAdapter(getActivity(), ((MainActivity) getActivity()).getImageStorage());
         adapter.setData(friends);
 
         ListView friendsList = (ListView) rootView.findViewById(R.id.friendsList);
         friendsList.setAdapter(adapter);
+        friendsList.setEmptyView(rootView.findViewById(R.id.emptyFriendsMessage));
 
         return rootView;
     }
