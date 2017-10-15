@@ -41,7 +41,7 @@ const createTableFriendships = heredoc(function() {/*
 const createTableTransactions = heredoc(function() {/*
     CREATE TABLE tokens (
         key integer primary key,
-        token text,
+        token varchar,
         token_user integer,
         foreign key(token_user) references users(key)
     );
