@@ -1,7 +1,7 @@
 var oauth = require("./oauth.js");
 var request = require('request')
 
-function provision(access_token) {
+function provision(access_token, cb) {
     var url = 'https://api.discover.com/nws/nwp/hce/v2/account/provision';
     request({
         url: url,
@@ -10,16 +10,18 @@ function provision(access_token) {
         method: 'POST'
     }, function (error, response, body) {
         if (error) {
+            cb(error);
             console.log("error");
-        }
+        } 
         console.log('Status', response.statusCode);
         // console.log('Headers', JSON.stringify(response.headers));
         // console.log('Reponse received', body);
+        cb(null, body);
     });
 }
 
-function provisionRequestToServer() {
-    oauth.authenticatedRequest(provision);
+function provisionRequestToServer(cb) {
+    oauth.authenticatedRequest(provision, cb);
 }
 
 module.exports = {provisionRequestToServer: provisionRequestToServer};
