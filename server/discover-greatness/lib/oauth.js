@@ -3,7 +3,7 @@ var request = require('request')
 var auth = "Basic " + new Buffer("l7xx516deac1b17b4087b891bb381ebab8ac:359e4a885b474e00ac2712f4f8fd8032").toString('base64');
 const API_KEY = 'l7xx516deac1b17b4087b891bb381ebab8ac'
 
-function authenticatedRequest(methodToRun) {
+function authenticatedRequest(methodToRun, cb) {
     request({
         url: 'https://apis.discover.com/auth/oauth/v2/token',
         method: 'POST',
@@ -22,7 +22,7 @@ function authenticatedRequest(methodToRun) {
         }
     
         var access_token = JSON.parse(res.body).access_token;
-        methodToRun(access_token);
+        methodToRun(access_token, cb);
     });
 }
 
