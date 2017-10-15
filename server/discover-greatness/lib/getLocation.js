@@ -1,5 +1,12 @@
 var oauth = require("./oauth.js");
-var request = require('request')
+var request = require('request');
+var config = require('config');
+var token = config.get("testRegToken");
+var sendPushNotifications = require("./sendPushNotifications.js");
+
+var jsUcfirst = function(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function getLocation(access_token) {
     var url = 'https://api.discover.com/geo/remote/rest/location';
@@ -24,17 +31,33 @@ function getLocation(access_token) {
             // console.log('Reponse received', JSON.parse(body));
             var sample = JSON.parse(body).location[2];
 
-            //just hard coding/taking 3rd store for now
             var restaurant = {
-              name:sample.name,
-              address:sample.geoLocation,
-              eligibilityIndicators:sample.mid[0],
-              category:sample.category[0].parent.name
+              name: sample.name,
+              address: sample.geoLocation,
+              eligibilityIndicators: sample.mid[0],
+              category: sample.category[0].parent.name
             }
-            console.log(restaurant);
-            // Send push note here...
+            var formattedRestaurantData = {
+                name: jsUcfirst(restaurant.name.toLowerCase()),
+                address: restaurant.address.address.address1 + " " + 
+                    restaurant.address.address.region1 + ", " + restaurant.address.address.region2,
+                offerMessage: "Save $2 on your next cup of coffee!",
+                expirationMessage: "Expires on October 16th, 2017"
+            }
+            console.log(formattedRestaurantData);
+            sendPushNotifications(token, formattedRestaurantData);
         }
     );
+}
+
+function secondExample() {
+    var formattedRestaurantData = {
+        name: "Lucky Strike",
+        address: "322 E Illinois St, Chicago, IL 60611",
+        offerMessage: "Get a free pitcher of beer if 3 of your friends visit this location!",
+        expirationMessage: "Expires on October 17th, 2017"
+    }
+    sendPushNotifications(token, formattedRestaurantData);
 }
 
 function getLocationAuthenticated() {

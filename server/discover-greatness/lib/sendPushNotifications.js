@@ -3,7 +3,7 @@
 const config = require('config');
 const gcm = require('node-gcm');
 
-const sendPushNotifications = function(registrationToken){
+const sendPushNotifications = function(registrationToken, restaurantData){
   // Set up the sender with your GCM/FCM API key (declare this once for multiple messages)
   const sender = new gcm.Sender("AAAAABsy6qE:APA91bEy0uEDjKw5UKSsY159CHnJbhIvDPWejuWV5hxBMMbKnt8VwLAi75WPf3F9tiveh384UMsvLELJmAWwlQYUL8BeVkTaYE62ulxEWU1HTc_eLF-gM2yShH0zZHhfniR5KIcXqpFH");
   // Prepare a message to be sent
@@ -14,16 +14,13 @@ const sendPushNotifications = function(registrationToken){
       contentAvailable: true,
       delayWhileIdle: true,
       timeToLive: 3,
+      senttime_: "now",
       dryRun: false,
-      data: {
-            restaurant: 'Hey, check out this restaurant nearby!',
-            deal: 'Go with a friend and receive a sick deal!'
-      },
-      notification: {
-          title: "New Rewards",
-          icon: "ic_launcher",
-          body: "Your friend recently bought coffee and now you get %20 off!"
-      }
+      name: restaurantData.name,
+      address: restaurantData.address,
+      offerMessage: restaurantData.offerMessage,
+      expirationMessage: restaurantData.expirationMessage,
+      title: "New Rewards"
   });
 
   // Specify which registration IDs to deliver the message to
