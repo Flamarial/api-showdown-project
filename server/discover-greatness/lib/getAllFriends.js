@@ -11,41 +11,44 @@ const getUserQuery = heredoc(function () {/*
     SELECT * FROM users WHERE key = ?;
 */});
 
-const getAllFriends = function(user) {
-    let userFriends = [], friends = [];
+const getUserObjectsForFriends = function(friendIds, cb) {
+    let userFriends = [];
+    friendIds.forEach((id) => {
+        sendQuery(getUserQuery, id, (err, rows) => {
+            if (err) {
+                cb(err);
+            } else {                        
+                rows.forEach((obj) => {
+                    userFriends.push(obj);
+                })
+                if(userFriends.length === friendIds.length) {
+                    cb(null, userFriends);
+                }
+            }
+        })
+    });
+};
+
+const getAllFriends = function(user, cb) {
+    let friends = [], friendObjs = [];
     
     if (!(sendQuery instanceof Error)) {
         sendQuery(getFriendsQuery, user.key, (err, rows) => {
             if (err) {
-                throw (err);
+                cb(err);
             } else {
                 rows.forEach((obj) => {
                     friends.push(obj.friend_id);
                 })
-
                 if (friends && friends.length > 0) {
-                    friends.forEach((id) => {
-                        sendQuery(getUserQuery, id, (err, rows) => {
-                            if (err) {
-                                throw (err);
-                            } else {                        
-                                rows.forEach((obj) => {
-                                    userFriends.push(obj);
-                                })
-
-                                console.log("Final results: ");
-                                console.log(userFriends);
-                                return userFriends;
-                            }
-                        })
-                    })
+                    getUserObjectsForFriends(friends, cb);
                 }
             }
         });
     } else {
-        console.log("There was an issue accessing the database.");
+        cb("There was an issue accessing the database.");
     }
 }
 
-module.export = getAllFriends;
+module.exports = getAllFriends;
 
