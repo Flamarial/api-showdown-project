@@ -16,8 +16,8 @@ const sendPushNotifications = function(registrationToken){
       timeToLive: 3,
       dryRun: false,
       data: {
-          key1: 'message1',
-          key2: 'message2'
+            restaurant: 'Hey, check out this restaurant nearby!',
+            deal: 'Go with a friend and receive a sick deal!'
       },
       notification: {
           title: "New Rewards",
@@ -25,10 +25,7 @@ const sendPushNotifications = function(registrationToken){
           body: "Your friend recently bought coffee and now you get %20 off!"
       }
   });
-  message.addData({
-      key1: 'Hey, check out this restaurant nearby!',
-      key2: 'Go with a friend and receive a sick deal!'
-  });
+
   // Specify which registration IDs to deliver the message to
   const regTokens = [];
   regTokens.push(registrationToken);
