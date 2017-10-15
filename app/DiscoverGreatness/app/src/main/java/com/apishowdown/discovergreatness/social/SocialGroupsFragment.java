@@ -37,6 +37,7 @@ public class SocialGroupsFragment extends Fragment {
 
         ListView groupsList = (ListView) rootView.findViewById(R.id.groupsList);
         groupsList.setAdapter(adapter);
+        groupsList.setEmptyView(rootView.findViewById(R.id.emptyGroupsMessage));
 
         return rootView;
     }

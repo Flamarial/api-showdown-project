@@ -42,6 +42,7 @@ public class SocialFriendsFragment extends Fragment {
 
         ListView friendsList = (ListView) rootView.findViewById(R.id.friendsList);
         friendsList.setAdapter(adapter);
+        friendsList.setEmptyView(rootView.findViewById(R.id.emptyFriendsMessage));
 
         return rootView;
     }
