@@ -1,7 +1,7 @@
 'use strict';
 
 const heredoc = require('heredoc'),
-    sendQuery = require('./accessDb').sendQuery; 
+    sendQuery = require('./helpers/accessDb').sendQuery; 
 
 const getUserFromWalletIdQuery = heredoc(function () {/*
     SELECT * FROM users WHERE wallet_id = ?;
@@ -53,7 +53,9 @@ const addFriend = function(first, last, wallet_id, cb) {
                     cb(err);
                 } else {
                     friend = friend;
+                    console.log('user');
                     console.log(user);
+                    console.log('friend');
                     console.log(friend);
                     if (user && friend) {
                         sendQuery(addFriendship, {
@@ -66,6 +68,8 @@ const addFriend = function(first, last, wallet_id, cb) {
                                 cb(null, results);
                             }
                         })
+                    } else {
+                        cb("Can't find user or friend");
                     }
                 }
             });
