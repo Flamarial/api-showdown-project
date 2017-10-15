@@ -1,6 +1,7 @@
 var data = require('./payload.js');
 var jwt = require('json-web-token');
 var sha256 = require('sha256');
+var jose = require('node-jose');
 
 // console.log('getMethods');
 // console.log(jwt.getAlgorithms());
@@ -11,8 +12,8 @@ var sha256 = require('sha256');
 //     } else {
 //         console.log("Encrypted Payload:");
 //         console.log(token);
-   
-//       // decode 
+
+//       // decode
 //     //   jwt.decode(secret, token, function (err_, decodedPayload, decodedHeader) {
 //     //     if (err) {
 //     //       console.error(err.name, err.message);
@@ -42,12 +43,15 @@ jweHeader = JSON.stringify({"alg":"RSA_5",
 "enc":"A128CBC-HS256",
 "kid":"LRGSx453Ccok3sKZ11hdC0d-S5BQjkr4M7MQb2xKNh9"});
 
+var buffer = jose.util.randomBytes(16);
+contentEncryptionIV = jose.util.base64url.encode(buffer);
+console.log(contentEncryptionIV);
 
 console.log("jweheader:");
 console.log(base64(jweHeader));
 
 
-var jwePayload = base64(jweHeader) + "." + base64(contentEncryptionKey) + "." + 
+var jwePayload = base64(jweHeader) + "." + base64(contentEncryptionKey) + "." +
     base64(contentEncryptionIV) + "." + base64(encryptedContent) + "." + base64(authenticationTag);
 
 function base64(stringToEncode) {
