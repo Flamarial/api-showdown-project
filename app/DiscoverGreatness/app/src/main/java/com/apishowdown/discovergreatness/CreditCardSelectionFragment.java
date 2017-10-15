@@ -24,9 +24,6 @@ public class CreditCardSelectionFragment extends Fragment {
     public static final String FRAGMENT_TAG = "creditCardSelection";
     public static final int CREDIT_CARD_SCAN_REQUEST_CODE = 9001;
 
-    private CreditCardArrayAdapter arrayAdapter;
-    private FeatureCoverFlow coverFlow;
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +36,9 @@ public class CreditCardSelectionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_credit_card_selection, container, false);
 
-        arrayAdapter = new CreditCardArrayAdapter(getActivity());
+        CreditCardArrayAdapter arrayAdapter = new CreditCardArrayAdapter(getActivity());
 
-        coverFlow = (FeatureCoverFlow) rootView.findViewById(R.id.coverflow);
+        FeatureCoverFlow coverFlow = (FeatureCoverFlow) rootView.findViewById(R.id.coverflow);
         coverFlow.setAdapter(arrayAdapter);
 
         ArrayList<CreditCard> creditCards = new ArrayList<>();

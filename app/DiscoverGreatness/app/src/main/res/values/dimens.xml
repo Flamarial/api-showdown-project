@@ -13,4 +13,11 @@
     <dimen name="drawer_padding_vertical">10dp</dimen>
     <dimen name="menu_item_text_spacing">10dp</dimen>
     <dimen name="menu_item_text">14sp</dimen>
+    <dimen name="container_padding">15dp</dimen>
+    <dimen name="friend_image_size">48dp</dimen>
+    <dimen name="friend_item_padding">15dp</dimen>
+    <dimen name="card_view_margin">10dp</dimen>
+    <dimen name="card_view_margin_half">5dp</dimen>
+    <dimen name="card_view_corner_radius">4dp</dimen>
+    <dimen name="card_view_elevation">4dp</dimen>
 </resources>
