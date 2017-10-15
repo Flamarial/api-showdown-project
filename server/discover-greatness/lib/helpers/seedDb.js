@@ -12,6 +12,46 @@ const seedUsers = heredoc(function () {/*
     ('Hajin', 'Lee', '1237', 'HAJINI');
 */});
 
+const seedLocations = heredoc(function () {/*
+    INSERT INTO location ( longitude, latitude, user_id )
+    VALUES
+    (0.0, 0.0, 1),
+    (0.0, 0.0, 2),
+    (0.0, 0.0, 3),
+    (0.0, 0.0, 4);
+*/});
+
+const updateUsersWithLocation = function() {
+    let locations;
+    const getAllLocations = heredoc(function () {/*
+        SELECT * FROM location;
+    */});
+
+    const updateUserWithLocation = heredoc(function () {/*
+        UPDATE users
+        SET location = $location_key
+        WHERE key = $user_id;
+    */});
+
+    sendQuery(getAllLocations, [], (err, rows) => {
+        if (err) {
+            throw (err);
+        } else {
+            locations = rows;
+            locations.forEach((locationObj) => {
+                sendQuery(updateUserWithLocation, {
+                    $location_key: locationObj.key,
+                    $user_id: locationObj.user_id
+                }, (err) => {
+                    if (err) {
+                        throw (err);
+                    }
+                })
+            })
+        }
+    })
+}
+
 const makeFriendships = function() {
     let allUsers;
     const getAllUsers = heredoc(function () {/*
@@ -56,6 +96,14 @@ if (!(sendQuery instanceof Error)) {
             throw (err) 
         } else {
             makeFriendships();
+        }
+    });
+
+    sendQuery(seedLocations, [], (err) => {
+        if (err) {
+            throw (err) 
+        } else {
+            updateUsersWithLocation();
         }
     });
 }
