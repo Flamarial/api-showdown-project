@@ -45,11 +45,27 @@
             android:paddingRight="@dimen/drawer_padding_horizontal"
             android:gravity="center_vertical"
             android:background="?android:attr/selectableItemBackground"
-            android:drawableLeft="@drawable/ic_home"
+            android:drawableLeft="@drawable/ic_home_blue"
             android:drawablePadding="@dimen/menu_item_text_spacing"
             android:textSize="@dimen/menu_item_text"
             android:textColor="@android:color/black"
             android:text="@string/home" />
+
+        <TextView
+            android:id="@+id/offersButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/drawer_padding_vertical"
+            android:paddingBottom="@dimen/drawer_padding_vertical"
+            android:paddingLeft="@dimen/drawer_padding_horizontal"
+            android:paddingRight="@dimen/drawer_padding_horizontal"
+            android:gravity="center_vertical"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableLeft="@drawable/ic_offer_blue"
+            android:drawablePadding="@dimen/menu_item_text_spacing"
+            android:textSize="@dimen/menu_item_text"
+            android:textColor="@android:color/black"
+            android:text="@string/my_offers" />
 
         <TextView
             android:id="@+id/socialButton"
@@ -61,7 +77,7 @@
             android:paddingRight="@dimen/drawer_padding_horizontal"
             android:gravity="center_vertical"
             android:background="?android:attr/selectableItemBackground"
-            android:drawableLeft="@drawable/ic_group"
+            android:drawableLeft="@drawable/ic_group_blue"
             android:drawablePadding="@dimen/menu_item_text_spacing"
             android:textSize="@dimen/menu_item_text"
             android:textColor="@android:color/black"

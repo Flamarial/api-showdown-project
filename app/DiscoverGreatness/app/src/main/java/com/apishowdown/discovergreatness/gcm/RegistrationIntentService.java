@@ -28,7 +28,7 @@ import java.util.Iterator;
 public class RegistrationIntentService extends IntentService {
 
     private static final String LOG_TAG = RegistrationIntentService.class.getName();
-    private static final String[] TOPICS = {"global"};
+    private static final String[] TOPICS = {"global"}; // TODO
 
     public RegistrationIntentService() {
         super(RegistrationIntentService.class.getName());
@@ -82,7 +82,7 @@ public class RegistrationIntentService extends IntentService {
                                     break;
                             }
                         } catch (JSONException e) {
-                            Log.e(LOG_TAG, "Error sending registration token: " + e.getLocalizedMessage());
+                            Log.e(LOG_TAG, "Error sending registration token: " + e.getMessage());
                             clearStoredRegistrationToken();
                         }
                     }
@@ -91,7 +91,7 @@ public class RegistrationIntentService extends IntentService {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e(LOG_TAG, "Error sending registration token: " + error.getLocalizedMessage());
+                Log.e(LOG_TAG, "Error sending registration token: " + error.getMessage());
                 clearStoredRegistrationToken();
             }
         });
@@ -102,6 +102,7 @@ public class RegistrationIntentService extends IntentService {
     private void subscribeTopics(String token) throws IOException {
         GcmPubSub pubSub = GcmPubSub.getInstance(this);
         for (String topic : TOPICS) {
+            // TODO
             pubSub.subscribe(token, "/topics/" + topic, null);
         }
     }

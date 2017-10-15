@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,7 +16,9 @@ import android.widget.TextView;
 
 import com.apishowdown.discovergreatness.creditcard.CreditCardSelectionFragment;
 import com.apishowdown.discovergreatness.gcm.RegistrationIntentService;
+import com.apishowdown.discovergreatness.offers.OffersFragment;
 import com.apishowdown.discovergreatness.social.SocialFragment;
+import com.apishowdown.discovergreatness.util.ImageStorage;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
@@ -23,9 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
 
+    private ImageStorage imageStorage = new ImageStorage();
     private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout drawerLayout;
     private TextView homeButton;
+    private TextView offersButton;
     private TextView socialButton;
 
     @Override
@@ -47,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         homeButton = (TextView) findViewById(R.id.homeButton);
+        offersButton = (TextView) findViewById(R.id.offersButton);
         socialButton = (TextView) findViewById(R.id.socialButton);
 
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close);
@@ -55,17 +61,23 @@ public class MainActivity extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToCreditCardSelection();
+                navigateToFragment(new CreditCardSelectionFragment(), CreditCardSelectionFragment.FRAGMENT_TAG);
+            }
+        });
+        offersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToFragment(new OffersFragment(), OffersFragment.FRAGMENT_TAG);
             }
         });
         socialButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToSocial();
+                navigateToFragment(new SocialFragment(), SocialFragment.FRAGMENT_TAG);
             }
         });
 
-        navigateToCreditCardSelection();
+        navigateToFragment(new CreditCardSelectionFragment(), CreditCardSelectionFragment.FRAGMENT_TAG);
     }
 
     @Override
@@ -88,17 +100,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void navigateToCreditCardSelection() {
+    private void navigateToFragment(Fragment fragment, String tag) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.fragmentContainer, new CreditCardSelectionFragment(), CreditCardSelectionFragment.FRAGMENT_TAG)
-                .addToBackStack(null)
-                .commit();
-        drawerLayout.closeDrawers();
-    }
-
-    private void navigateToSocial() {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.fragmentContainer, new SocialFragment(), SocialFragment.FRAGMENT_TAG)
+        ft.replace(R.id.fragmentContainer, fragment, tag)
                 .addToBackStack(null)
                 .commit();
         drawerLayout.closeDrawers();
@@ -116,5 +120,9 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+
+    public ImageStorage getImageStorage() {
+        return imageStorage;
     }
 }
