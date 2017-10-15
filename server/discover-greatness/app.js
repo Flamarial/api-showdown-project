@@ -12,6 +12,7 @@ var addFriend = require('./routes/addFriend');
 var updateLocation = require('./routes/updateLocation');
 var getLocation = require('./routes/getLocation');
 var registrationToken = require('./routes/registrationToken');
+var triggerPromotion = require('./routes/triggerPromotion');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.post('/deleteFriend', deleteFriend);
 app.post('/updateLocation', updateLocation);
 app.post('/registrationToken', registrationToken);
 app.get('/getLocation', getLocation);
+app.get('/triggerPromotion', triggerPromotion);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

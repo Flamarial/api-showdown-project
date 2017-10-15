@@ -32,8 +32,13 @@ function getLocation(access_token) {
               category:sample.category[0].parent.name
             }
             console.log(restaurant);
+            // Send push note here...
         }
     );
 }
 
-oauth.authenticatedRequest(getLocation);
+function getLocationAuthenticated() {
+    oauth.authenticatedRequest(getLocation);
+}
+
+module.exports = {getLocationAuthenticated: getLocationAuthenticated}
