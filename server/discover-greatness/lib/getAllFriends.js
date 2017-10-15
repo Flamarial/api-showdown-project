@@ -29,6 +29,20 @@ const getUserObjectsForFriends = function(friendIds, cb) {
     });
 };
 
+const calculateAllFriends = function(userInfo, cb) {
+    if (userInfo instanceof Object) {
+        getAllFriends(userInfo, cb);
+    } else {
+        sendQuery(getUserFromWalletIdQuery, {$wallet_id: userInfo}, (err, rows) => {
+            if (err) {
+                cb(err);
+            } else {
+                getAllFriends(rows[0], cb);
+            }
+        })
+    }
+}
+
 const getAllFriends = function(user, cb) {
     let friends = [], friendObjs = [];
     
@@ -50,5 +64,5 @@ const getAllFriends = function(user, cb) {
     }
 }
 
-module.exports = getAllFriends;
+module.exports = calculateAllFriends;
 

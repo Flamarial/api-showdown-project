@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var friends = require('./routes/friends');
+var getAllFriends = require('./routes/getAllFriends');
 var deleteFriend = require('./routes/deleteFriend');
 var addFriend = require('./routes/addFriend');
 var updateLocation = require('./routes/updateLocation');
@@ -36,6 +37,7 @@ app.post('/deleteFriend', deleteFriend);
 app.post('/updateLocation', updateLocation);
 app.post('/registrationToken', registrationToken);
 app.get('/getLocation', getLocation);
+app.get('/getAllFriends', getAllFriends);
 app.get('/triggerPromotion', triggerPromotion);
 
 // catch 404 and forward to error handler
