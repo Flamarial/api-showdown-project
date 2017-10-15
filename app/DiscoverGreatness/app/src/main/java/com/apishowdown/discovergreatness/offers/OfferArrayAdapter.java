@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.apishowdown.discovergreatness.R;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class OfferArrayAdapter extends BaseAdapter {
@@ -51,6 +50,7 @@ public class OfferArrayAdapter extends BaseAdapter {
 
             ViewHolder viewHolder = new ViewHolder();
             viewHolder.merchantName = (TextView) convertView.findViewById(R.id.merchantName);
+            viewHolder.merchantAddress = (TextView) convertView.findViewById(R.id.merchantAddress);
             viewHolder.offerMessage = (TextView) convertView.findViewById(R.id.offerMessage);
             viewHolder.offerExpirationDate = (TextView) convertView.findViewById(R.id.offerExpirationDate);
             convertView.setTag(viewHolder);
@@ -59,16 +59,16 @@ public class OfferArrayAdapter extends BaseAdapter {
         ViewHolder holder = (ViewHolder) convertView.getTag();
 
         holder.merchantName.setText(offers.get(position).getMerchantName());
+        holder.merchantAddress.setText(offers.get(position).getMerchantAddress());
         holder.offerMessage.setText(offers.get(position).getMessage());
-
-        String date = new SimpleDateFormat("MMMM dd, yyyy", context.getResources().getConfiguration().locale).format(offers.get(position).getExpirationDate());
-        holder.offerExpirationDate.setText(context.getString(R.string.expiration_date_message, date));
+        holder.offerExpirationDate.setText(offers.get(position).getExpirationMessage());
 
         return convertView;
     }
 
     private static class ViewHolder {
         TextView merchantName;
+        TextView merchantAddress;
         TextView offerMessage;
         TextView offerExpirationDate;
     }

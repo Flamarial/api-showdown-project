@@ -60,6 +60,7 @@ public class FriendGroupArrayAdapter extends BaseAdapter {
 
         holder.groupName.setText(friendGroups.get(position).getName());
 
+        holder.groupUsersList.removeAllViews();
         List<Friend> friends = friendGroups.get(position).getFriends();
         if (friends != null) {
             for (int i = 0; i < friends.size(); i++) {

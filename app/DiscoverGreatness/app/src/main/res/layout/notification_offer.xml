@@ -7,27 +7,27 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/card_view_margin_half"
-        android:layout_marginBottom="@dimen/card_view_margin_half"
-        android:layout_marginLeft="@dimen/card_view_margin"
-        android:layout_marginRight="@dimen/card_view_margin"
-        app:cardElevation="@dimen/card_view_elevation"
-        app:cardCornerRadius="@dimen/card_view_corner_radius">
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/card_view_item_padding"
-            android:paddingBottom="@dimen/card_view_item_padding"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/merchantName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/card_view_item_padding"
-                android:layout_marginRight="@dimen/card_view_item_padding"
-                android:textSize="@dimen/card_view_item_name"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -35,36 +35,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:layout_marginLeft="@dimen/card_view_item_padding"
-                android:layout_marginRight="@dimen/card_view_item_padding"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:textSize="10sp"
                 android:textStyle="italic"
-                android:textColor="@color/text_disabled" />
+                android:textColor="#CCCCCC" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/divider_height"
+                android:layout_height="2dp"
                 android:layout_marginTop="5dp"
-                android:background="@color/yellow" />
+                android:background="#FFE000" />
 
             <TextView
                 android:id="@+id/offerMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="@dimen/card_view_item_padding"
-                android:layout_marginRight="@dimen/card_view_item_padding" />
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
 
             <TextView
                 android:id="@+id/offerExpirationDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:layout_marginLeft="@dimen/card_view_item_padding"
-                android:layout_marginRight="@dimen/card_view_item_padding"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:textSize="10sp"
                 android:textStyle="italic"
-                android:textColor="@color/text_disabled" />
+                android:textColor="#CCCCCC" />
 
         </LinearLayout>
 

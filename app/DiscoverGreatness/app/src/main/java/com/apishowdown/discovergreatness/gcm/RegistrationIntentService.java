@@ -14,21 +14,22 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.apishowdown.discovergreatness.Preference;
 import com.apishowdown.discovergreatness.R;
-import com.google.android.gms.gcm.GcmPubSub;
+import com.apishowdown.discovergreatness.util.PalRequestQueueSingleton;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.iid.InstanceID;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
+
+import static com.apishowdown.discovergreatness.util.WalletUtil.BASE_URL;
+import static com.apishowdown.discovergreatness.util.WalletUtil.WALLET_ID;
 
 public class RegistrationIntentService extends IntentService {
 
     private static final String LOG_TAG = RegistrationIntentService.class.getName();
-    private static final String[] TOPICS = {"global"}; // TODO
 
     public RegistrationIntentService() {
         super(RegistrationIntentService.class.getName());
@@ -37,6 +38,7 @@ public class RegistrationIntentService extends IntentService {
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        clearStoredRegistrationToken(); // TODO remove in production once registration token is persisted on server
 
         try {
             InstanceID instanceID = InstanceID.getInstance(this);
@@ -44,7 +46,6 @@ public class RegistrationIntentService extends IntentService {
             String previousToken = prefs.getString(Preference.REGISTRATION_TOKEN, null);
             if (!token.equals(previousToken)) {
                 sendRegistrationToServer(token);
-                subscribeTopics(token);
                 prefs.edit().putString(Preference.REGISTRATION_TOKEN, token).apply();
             }
         } catch (Exception e) {
@@ -56,10 +57,11 @@ public class RegistrationIntentService extends IntentService {
     }
 
     private void sendRegistrationToServer(String token) {
-        String url = "http://192.168.43.84:3000/registrationToken"; // TODO
+        String url = BASE_URL + "/registrationToken";
 
         HashMap<String, String> map = new HashMap<>();
         map.put("gcm_registration_token", token);
+        map.put("wallet_id", WALLET_ID);
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, new JSONObject(map), new Response.Listener<JSONObject>() {
             @Override
@@ -67,24 +69,22 @@ public class RegistrationIntentService extends IntentService {
                 Log.i(LOG_TAG, "Got response after POSTing registration token");
 
                 if (response != null) {
-                    for (Iterator<String> keys = response.keys(); keys.hasNext(); ) {
-                        String key = keys.next();
-                        try {
-                            Log.i(LOG_TAG, key + " : " + response.get(key).toString());
-                            switch (key) {
-                                case "error":
-                                    if (response.get(key) != null) {
-                                        Log.e(LOG_TAG, "Error setting registration token: " + response.get(key));
-                                        clearStoredRegistrationToken();
-                                    } else {
-                                        Log.i(LOG_TAG, "Successfully set registration token");
-                                    }
-                                    break;
-                            }
-                        } catch (JSONException e) {
-                            Log.e(LOG_TAG, "Error sending registration token: " + e.getMessage());
+                    try {
+                        if (response.has("error")) {
+                            Log.e(LOG_TAG, "Error setting registration token: " + response.getString("error"));
                             clearStoredRegistrationToken();
+                        } else {
+                            Log.i(LOG_TAG, "Successfully set registration token");
                         }
+
+                        for (Iterator<String> keys = response.keys(); keys.hasNext(); ) {
+                            String key = keys.next();
+                            Log.i(LOG_TAG, key + " : " + response.get(key).toString());
+                        }
+                    } catch (JSONException e) {
+                        Log.e(LOG_TAG, "Error sending registration token: " + e.getMessage());
+                        clearStoredRegistrationToken();
+                        e.printStackTrace();
                     }
                 }
             }
@@ -93,18 +93,11 @@ public class RegistrationIntentService extends IntentService {
             public void onErrorResponse(VolleyError error) {
                 Log.e(LOG_TAG, "Error sending registration token: " + error.getMessage());
                 clearStoredRegistrationToken();
+                error.printStackTrace();
             }
         });
 
         PalRequestQueueSingleton.getInstance(this).addToRequestQueue(request);
-    }
-
-    private void subscribeTopics(String token) throws IOException {
-        GcmPubSub pubSub = GcmPubSub.getInstance(this);
-        for (String topic : TOPICS) {
-            // TODO
-            pubSub.subscribe(token, "/topics/" + topic, null);
-        }
     }
 
     private void clearStoredRegistrationToken() {

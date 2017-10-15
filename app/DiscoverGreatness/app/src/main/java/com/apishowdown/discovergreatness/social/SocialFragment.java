@@ -1,26 +1,47 @@
 package com.apishowdown.discovergreatness.social;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.apishowdown.discovergreatness.MainActivity;
 import com.apishowdown.discovergreatness.R;
+import com.apishowdown.discovergreatness.util.PalRequestQueueSingleton;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Iterator;
+
+import static com.apishowdown.discovergreatness.util.WalletUtil.BASE_URL;
+import static com.apishowdown.discovergreatness.util.WalletUtil.WALLET_ID;
 
 public class SocialFragment extends Fragment {
 
+    private static final String LOG_TAG = SocialFragment.class.getName();
     public static final String FRAGMENT_TAG = "social";
 
     @Override
@@ -76,6 +97,74 @@ public class SocialFragment extends Fragment {
             case R.id.addGroupButton:
                 return true;
             case R.id.addFriendButton:
+                final View dialogView = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_add_friend, null);
+                new AlertDialog.Builder(getActivity()).setTitle(R.string.add_friend)
+                        .setView(dialogView)
+                        .setPositiveButton(R.string.add, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                EditText firstNameInput = (EditText) dialogView.findViewById(R.id.firstNameInput);
+                                EditText lastNameInput = (EditText) dialogView.findViewById(R.id.lastNameInput);
+
+                                String url = BASE_URL + "/addFriend";
+
+                                HashMap<String, String> map = new HashMap<>();
+                                map.put("first_name", firstNameInput.getText().toString());
+                                map.put("last_name", lastNameInput.getText().toString());
+                                map.put("wallet_id", WALLET_ID);
+
+                                JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, new JSONObject(map), new Response.Listener<JSONObject>() {
+                                    @Override
+                                    public void onResponse(JSONObject response) {
+                                        Log.i(LOG_TAG, "Got response after POSTing add friend request");
+
+                                        if (response != null) {
+                                            try {
+                                                if (response.has("error")) {
+                                                    String error = response.getString("error");
+                                                    Log.e(LOG_TAG, "Error adding friend: " + error);
+                                                    Snackbar.make(getActivity().findViewById(android.R.id.content), R.string.add_friend_error_message, Snackbar.LENGTH_SHORT).show();
+                                                } else {
+                                                    String firstName = response.getString("first_name");
+                                                    String lastName = response.getString("last_name");
+                                                    String imageUrl = response.getString("image_url");
+
+                                                    Log.i(LOG_TAG, "Successfully added friend");
+                                                    MainActivity mainActivity = ((MainActivity)getActivity());
+                                                    mainActivity.getFriends().add(new Friend(firstName, lastName, imageUrl));
+                                                    mainActivity.getFriendArrayAdapter().notifyDataSetChanged();
+                                                }
+
+                                                for (Iterator<String> keys = response.keys(); keys.hasNext(); ) {
+                                                    String key = keys.next();
+                                                    Log.i(LOG_TAG, key + " : " + response.get(key).toString());
+                                                }
+                                            } catch (JSONException e) {
+                                                Log.e(LOG_TAG, "Error adding friend: " + e.getMessage());
+                                                Snackbar.make(getActivity().findViewById(android.R.id.content), R.string.add_friend_error_message, Snackbar.LENGTH_SHORT).show();
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                    }
+                                }, new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        Log.e(LOG_TAG, "Error adding friend: " + error.getMessage());
+                                        Snackbar.make(getActivity().findViewById(android.R.id.content), R.string.add_friend_error_message, Snackbar.LENGTH_SHORT).show();
+                                        error.printStackTrace();
+                                    }
+                                });
+
+                                PalRequestQueueSingleton.getInstance(getActivity()).addToRequestQueue(request);
+                            }
+                        })
+                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

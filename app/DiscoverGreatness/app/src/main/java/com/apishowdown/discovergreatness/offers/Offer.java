@@ -1,27 +1,31 @@
 package com.apishowdown.discovergreatness.offers;
 
-import java.util.Date;
-
 public class Offer {
     private String merchantName;
+    private String merchantAddress;
     private String message;
-    private Date expirationDate;
+    private String expirationMessage;
 
-    public Offer(String merchantName, String message, Date expirationDate) {
+    public Offer(String merchantName, String merchantAddress, String message, String expirationMessage) {
         this.merchantName = merchantName;
+        this.merchantAddress = merchantAddress;
         this.message = message;
-        this.expirationDate = expirationDate;
+        this.expirationMessage = expirationMessage;
     }
 
     public String getMerchantName() {
         return merchantName;
     }
 
+    public String getMerchantAddress() {
+        return merchantAddress;
+    }
+
     public String getMessage() {
         return message;
     }
 
-    public Date getExpirationDate() {
-        return expirationDate;
+    public String getExpirationMessage() {
+        return expirationMessage;
     }
 }

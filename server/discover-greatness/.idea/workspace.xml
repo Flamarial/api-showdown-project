@@ -2,23 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="653fd121-6ce8-4206-b1e8-57abf429837f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/gcm/PalGcmListenerService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/gcm/PalInstanceIDListenerService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/gcm/RegistrationIntentService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/CreditCard.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/creditcard/CreditCard.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/CreditCardArrayAdapter.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/creditcard/CreditCardArrayAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/CreditCardSelectionFragment.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/creditcard/CreditCardSelectionFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/Friend.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/Friend.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/FriendArrayAdapter.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/FriendArrayAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/FriendGroup.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/FriendGroup.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/FriendGroupArrayAdapter.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/FriendGroupArrayAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/SocialFragment.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/SocialFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/SocialFriendsFragment.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/SocialFriendsFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/SocialGroupsFragment.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/SocialGroupsFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/.idea/misc.xml" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/build.gradle" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/util/WalletUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/res/layout/dialog_add_friend.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/res/layout/notification_offer.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/gcm/PalRequestQueueSingleton.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/util/PalRequestQueueSingleton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/MainActivity.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/Preference.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/Preference.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/gcm/PalGcmListenerService.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/gcm/PalGcmListenerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/gcm/RegistrationIntentService.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/gcm/RegistrationIntentService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/offers/Offer.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/offers/Offer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/offers/OfferArrayAdapter.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/offers/OfferArrayAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/offers/OffersFragment.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/offers/OffersFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/FriendGroupArrayAdapter.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/FriendGroupArrayAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/SocialFragment.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/SocialFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/SocialFriendsFragment.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/SocialFriendsFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/SocialGroupsFragment.java" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/java/com/apishowdown/discovergreatness/social/SocialGroupsFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/res/layout/dialog_about.xml" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/res/layout/dialog_about.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/res/layout/item_offer.xml" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/res/layout/item_offer.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/res/values/dimens.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../../app/DiscoverGreatness/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="discover-greatness.iws" />
@@ -40,12 +43,12 @@
     <favorites_list name="discover-greatness" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+            <state relative-caret-position="259">
+              <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -54,79 +57,31 @@
       <file leaf-file-name="sendPushNotifications.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/sendPushNotifications.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="352">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getMerchants.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/getMerchants.js">
+      <file leaf-file-name="getAllFriends.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/getAllFriends.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getLocation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/getLocation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="oauth.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/oauth.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hce.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/hce.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="payload.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/payload.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="calculateLocation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/calculateLocation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="611">
+              <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="addFriend.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/addFriend.js">
+        <entry file="file://$PROJECT_DIR$/routes/addFriend.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="264">
+              <caret line="12" column="23" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="23" />
+              <folding>
+                <marker date="1508081743302" expanded="true" signature="681:695" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,6 +96,56 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="registrationToken.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/registrationToken.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getLocation.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/getLocation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addFriend.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/addFriend.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-27">
+              <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="seedDb.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/helpers/seedDb.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2937">
+              <caret line="152" column="11" selection-start-line="152" selection-start-column="11" selection-end-line="152" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -149,6 +154,15 @@
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/lib/helpers/seedDb.js" />
+        <option value="$PROJECT_DIR$/routes/registrationToken.js" />
+        <option value="$PROJECT_DIR$/lib/sendPushNotifications.js" />
+      </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -188,7 +202,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -313,6 +326,7 @@
       </pane>
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -547,6 +561,7 @@
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
+      <setting name="depsClasspath" value="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
@@ -751,6 +766,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -812,11 +833,12 @@
       <updated>1508001789799</updated>
       <workItem from="1508001792289" duration="1365000" />
       <workItem from="1508042378156" duration="2755000" />
+      <workItem from="1508075661130" duration="7783000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4120000" />
+    <option name="totallyTimeSpent" value="11903000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -831,18 +853,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295711" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295711" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -861,82 +883,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/addFriend.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/deleteFriend.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/updateLocation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/helpers/accessDb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/development.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/helpers/seedDb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="138" column="16" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/friends.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
+        <state relative-caret-position="682">
           <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/sendPushNotifications.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -953,7 +911,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1508081743264" expanded="true" signature="1762:1773" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -997,10 +957,185 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/sendPushNotifications.js">
+    <entry file="file://$PROJECT_DIR$/routes/friends.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/deleteFriend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/updateLocation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/helpers/accessDb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/development.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/getMerchants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/getLocation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1508081743264" expanded="true" signature="1762:1773" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/hce.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/oauth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/payload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="64" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/calculateLocation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/deleteFriend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/getLocation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/friends.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/getAllFriends.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/addFriend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="23" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="23" />
+          <folding>
+            <marker date="1508081743302" expanded="true" signature="681:695" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/addFriend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/helpers/seedDb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2937">
+          <caret line="152" column="11" selection-start-line="152" selection-start-column="11" selection-end-line="152" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/registrationToken.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/sendPushNotifications.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding />
         </state>
       </provider>

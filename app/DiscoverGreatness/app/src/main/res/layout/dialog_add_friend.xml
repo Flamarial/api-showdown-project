@@ -19,47 +19,28 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/dialog_padding_vertical"
-            android:textColor="@color/text_disabled"
-            android:text="@string/copyright_message" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dialog_section_spacing"
+            android:layout_marginTop="@dimen/dialog_padding_vertical"
             android:textStyle="bold"
-            android:textSize="@dimen/heading_text"
-            android:text="Attributions" />
+            android:text="@string/first_name" />
+
+        <EditText
+            android:id="@+id/firstNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dialog_item_spacing"
             android:textStyle="bold"
-            android:text="Add credit card icon" />
+            android:text="@string/last_name" />
 
-        <TextView
+        <EditText
+            android:id="@+id/lastNameInput"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollHorizontally="false"
-            android:textColor="@color/text_disabled"
-            android:text="Freepik from www.flaticon.com" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dialog_item_spacing"
-            android:textStyle="bold"
-            android:text="App menu background" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollHorizontally="false"
-            android:textColor="@color/text_disabled"
-            android:text="Kjpargeter - Freepik.com" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

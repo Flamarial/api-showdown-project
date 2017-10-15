@@ -1,4 +1,4 @@
-package com.apishowdown.discovergreatness.gcm;
+package com.apishowdown.discovergreatness.util;
 
 import android.content.Context;
 
