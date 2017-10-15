@@ -22,5 +22,5 @@ const sendQuery = function(query, options, cb) {
     });
 }
 
-module.exports = sendQuery;
-
+module.exports.sendQuery = sendQuery;
+module.exports.db = db;

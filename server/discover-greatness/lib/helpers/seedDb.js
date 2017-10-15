@@ -1,9 +1,34 @@
 'use strict';
 
 const heredoc = require('heredoc'),
-    sendQuery = require('./accessDb');
+    accessDb = require('./accessDb'),
+    sendQuery = accessDb.sendQuery,
+    db = accessDb.db;
 
-const createTables = heredoc(function() {/*
+const createTableLocations = heredoc(function() {/*
+    CREATE TABLE locations (
+        key integer primary key,
+        longitude float,
+        latitude float,
+        user_id integer,
+        foreign key(user_id) references users(key)
+    );
+*/});
+
+const createTableUsers = heredoc(function() {/*
+    CREATE TABLE users (
+        key integer primary key,
+        last_name text,
+        first_name text,
+        wallet_id text,
+        info text,
+        image_url text,
+        location integer,
+        foreign key(location) references locations(key)
+    );
+*/});
+
+const createTableFriendships = heredoc(function() {/*
     CREATE TABLE friendships (
         user_id integer,
         friend_id integer,
@@ -11,24 +36,9 @@ const createTables = heredoc(function() {/*
         foreign key(user_id) references users(key),
         foreign key(friend_id) references users(key)
     );
+*/});
 
-    CREATE TABLE location (
-        key integer primary key,
-        longitude float,
-        latitude float,
-        user_id integer,
-        foreign key(user_id) references users(key)
-    );
-    CREATE TABLE users (
-        key integer primary key,
-        last_name text,
-        first_name text,
-        wallet_id text,
-        info text,
-        image_url text
-        location integer,
-        foreign key(location) references locations(key)
-    );
+const createTableTransactions = heredoc(function() {/*
     CREATE TABLE transactions (
         key integer primary key,
         merchant text,
@@ -126,28 +136,22 @@ const makeFriendships = function() {
     }); 
 }
 
-if (!(sendQuery instanceof Error)) {
-    sendQuery(createTables, [], (err) => {
-        if (err) {
-            throw (err) 
-        } 
+db.serialize(function() {
+    // These two queries will run sequentially.
+    db.run(createTableLocations, [], () => {
+        db.run(createTableUsers, [], () => {
+            db.run(createTableFriendships, [], () => {
+                db.run(createTableTransactions, [], () => {
+                    db.run(seedUsers, [], () => {
+                        db.run(seedLocations, [], () => {
+                            makeFriendships();
+                            updateUsersWithLocation();
+                        })
+                    });
+                });
+            });
+        });
     });
-
-    sendQuery(seedUsers, [], (err) => {
-        if (err) {
-            throw (err) 
-        } else {
-            makeFriendships();
-        }
-    });
-
-    sendQuery(seedLocations, [], (err) => {
-        if (err) {
-            throw (err) 
-        } else {
-            updateUsersWithLocation();
-        }
-    });
-}
+});
 
 

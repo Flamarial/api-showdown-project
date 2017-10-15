@@ -1,7 +1,7 @@
 'use strict';
 
 const heredoc = require('heredoc'),
-sendQuery = require('./helpers/accessDb');
+    sendQuery = require('./helpers/accessDb').sendQuery;
 
 const getUserFromWalletIdQuery = heredoc(function () {/*
     SELECT * FROM users WHERE wallet_id = ?;

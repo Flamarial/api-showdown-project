@@ -1,7 +1,7 @@
 'use strict';
 
 const heredoc = require('heredoc'),
-    sendQuery = require('./helpers/accessDb'),
+    sendQuery = require('./helpers/accessDb').sendQuery,
     getAllFriends = require('./getAllFriends');
 
 const getUserQuery = heredoc(function () {/*
@@ -48,6 +48,7 @@ const calculateLocation = function(userInfo, cb) {
         })
     }
 }
+
 
 const getLocation = function(userObj, cb) {
     console.log(userObj);
