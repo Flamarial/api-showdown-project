@@ -1,6 +1,10 @@
 var oauth = require("./oauth.js");
 var request = require('request')
 
+var jsUcfirst = function(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function getLocation(access_token) {
     var url = 'https://api.discover.com/geo/remote/rest/location';
     var queryParams = '?' + encodeURIComponent('requestHeader.requestId') + '=' +
@@ -26,13 +30,21 @@ function getLocation(access_token) {
 
             //just hard coding/taking 3rd store for now
             var restaurant = {
-              name:sample.name,
-              address:sample.geoLocation,
-              eligibilityIndicators:sample.mid[0],
-              category:sample.category[0].parent.name
+              name: sample.name,
+              address: sample.geoLocation,
+              eligibilityIndicators: sample.mid[0],
+              category: sample.category[0].parent.name
             }
             console.log(restaurant);
+            var formattedRestaurantData = {
+                name: jsUcfirst(restaurant.name.toLowerCase()),
+                address: restaurant.address,
+                offerMessage: "Save $2 on your next cup of coffee!",
+                expirationMessage: "Expires on October 16th, 2017"
+            }
+            console.log(formattedRestaurantData);
             // Send push note here...
+
         }
     );
 }
