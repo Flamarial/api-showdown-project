@@ -8,7 +8,11 @@ const updateLocation = require('../lib/sendPushNotifications');
 router.post('/registrationToken', function(req, res, next) {
     let body = req.body;
     console.log(body.gcm_registration_token);
+<<<<<<< Updated upstream
     res.status(200).send({"error": "Registration was not successful hajin. :("});
+=======
+    res.status(200).send();
+>>>>>>> Stashed changes
 });
 
 module.exports = router;
