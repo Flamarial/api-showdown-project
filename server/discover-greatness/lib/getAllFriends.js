@@ -11,11 +11,11 @@ const getUserQuery = heredoc(function () {/*
     SELECT * FROM users WHERE key = ?;
 */});
 
-const getAllFriends = function(user_key) {
+const getAllFriends = function(user) {
     let userFriends = [], friends = [];
     
     if (!(sendQuery instanceof Error)) {
-        sendQuery(getFriendsQuery, user_key, (err, rows) => {
+        sendQuery(getFriendsQuery, user.key, (err, rows) => {
             if (err) {
                 throw (err);
             } else {
