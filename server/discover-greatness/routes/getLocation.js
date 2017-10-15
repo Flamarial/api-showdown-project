@@ -8,9 +8,10 @@ router.get('/getLocation', function(req, res, next) {
     console.log(wallet_id);
     calculateLocation(wallet_id, (err, location) => {
         if (err) {
-            res.send("Invalid wallet id.").status(400);
+            res.status(400).send("Invalid wallet id.");
         } else {
-            res.send(location).status(200);
+            console.log(location);
+            res.status(200).send(location);
         }
     });
 });
