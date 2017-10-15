@@ -52,7 +52,7 @@ const getToken = function(user_id, cb) {
         if (err) {
             cb(err)
         } else {
-            cb(null, tokenObj[0]);
+            cb(null, tokenObj[-1]);
         }
     })
 }
