@@ -43,7 +43,8 @@ const createTableTransactions = heredoc(function() {/*
         key integer primary key,
         token varchar,
         token_user integer,
-        foreign key(token_user) references users(key)
+        foreign key(token_user) references users(key),
+        unique (token, token_user)
     );
 */});
 

@@ -6,7 +6,7 @@ const heredoc = require('heredoc'),
     db = accessDb.db;
 
 const insertToken = heredoc(function () {/*
-    INSERt INTO tokens (token, token_user)
+    INSERT INTO tokens (token, token_user)
     VALUES ($token, $token_user)
 */});
 
@@ -52,7 +52,7 @@ const getToken = function(user_id, cb) {
         if (err) {
             cb(err)
         } else {
-            cb(null, tokenObj.token);
+            cb(null, tokenObj[0]);
         }
     })
 }
