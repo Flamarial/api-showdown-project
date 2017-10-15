@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "456321697",
+    "firebase_url": "https://discoverpal.firebaseio.com",
+    "project_id": "discoverpal",
+    "storage_bucket": "discoverpal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456321697:android:613ece750af0c8c3",
+        "android_client_info": {
+          "package_name": "com.apishowdown.discovergreatness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456321697-ijoqp8u7fgk0glpi6t3tupjs9n9hbcnb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNKtNaO5KISqqm8anfrzfguGkwL18rex8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
