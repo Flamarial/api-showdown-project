@@ -39,13 +39,11 @@ const createTableFriendships = heredoc(function() {/*
 */});
 
 const createTableTransactions = heredoc(function() {/*
-    CREATE TABLE transactions (
+    CREATE TABLE tokens (
         key integer primary key,
-        merchant text,
-        description text,
-        amount float,
-        transaction_user integer,
-        foreign key(transaction_user) references users(key)
+        token text,
+        token_user integer,
+        foreign key(token_user) references users(key)
     );
 */});
 
