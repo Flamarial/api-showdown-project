@@ -10,7 +10,7 @@ router.post('/registrationToken', function(req, res, next) {
     console.log('registration token');
     console.log(body.gcm_registration_token);
     sendPushNotifications(body.gcm_registration_token);
-    res.status(200).send();
+    res.status(200).send({});
 });
 
 module.exports = router;
