@@ -13,17 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow
-            android:id="@+id/coverflow"
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:coverHeight="@dimen/credit_card_height"
-            app:coverWidth="@dimen/credit_card_width"
-            app:maxScaleFactor="1.5"
-            app:reflectionGap="0px"
-            app:rotationThreshold="0.5"
-            app:scalingThreshold="0.5"
-            app:spacing="0.575" />
+            android:layout_height="match_parent" />
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/actionBar"
