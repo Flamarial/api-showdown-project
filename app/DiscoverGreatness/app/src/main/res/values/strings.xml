@@ -2,7 +2,7 @@
     <string name="app_name">Discover Pal</string>
     <string name="copyright_message">©2017 Hajin\'s Disciples. All rights reserved.</string>
 
-    <string name="add">Add</string>
+    <string name="add_credit_card">Add Credit Card</string>
     <string name="about">About</string>
     <string name="about_this_app">About This App</string>
     <string name="drawer_open">Open app menu</string>
@@ -10,4 +10,8 @@
 
     <string name="home">Home</string>
     <string name="social">Social</string>
+    <string name="groups">Groups</string>
+    <string name="friends">Friends</string>
+    <string name="add_group">Add Group</string>
+    <string name="add_friend">Add Friend</string>
 </resources>

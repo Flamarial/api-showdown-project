@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public class CreditCardArrayAdapter extends BaseAdapter {
 
-    private ArrayList<CreditCard> creditCards = new ArrayList<>(0);
     private Context context;
+    private ArrayList<CreditCard> creditCards = new ArrayList<>();
 
     public CreditCardArrayAdapter(Context context) {
         this.context = context;
@@ -57,8 +57,8 @@ public class CreditCardArrayAdapter extends BaseAdapter {
         return convertView;
     }
 
-    protected static class ViewHolder {
-        public TextView creditCardNumber;
-        public TextView creditCardExpirationDate;
+    private static class ViewHolder {
+        TextView creditCardNumber;
+        TextView creditCardExpirationDate;
     }
 }
