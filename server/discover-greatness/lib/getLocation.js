@@ -3,7 +3,6 @@ var request = require('request')
 
 function getLocation(access_token) {
     var url = 'https://api.discover.com/geo/remote/rest/location';
-    var location = {longitude: };
     var queryParams = '?' + encodeURIComponent('requestHeader.requestId') + '=' + 
         encodeURIComponent('123')+ '&' + encodeURIComponent('requestHeader.version') + '=' + 
         encodeURIComponent('3.2')+ '&' + encodeURIComponent('requestHeader.format') + '=' + 
@@ -28,4 +27,3 @@ function getLocation(access_token) {
 }
 
 oauth.authenticatedRequest(getLocation);
-

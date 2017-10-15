@@ -5,4 +5,5 @@
     <color name="discover_orange">#FF6600</color>
     <color name="discover_orange_dark">#EE602D</color>
     <color name="yellow">#FFE000</color>
+    <color name="background_image_default">#CCCCCC</color>
 </resources>
