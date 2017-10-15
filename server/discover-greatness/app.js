@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var friends = require('./routes/friends');
 var updateFriend = require('./routes/updateFriend');
 var updateLocation = require('./routes/updateLocation');
+var getLocation = require('./routes/getLocation');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.get('/', index);
 app.get('/friends', friends);
 app.post('/updateFriend', updateFriend);
 app.post('/updateLocation', updateLocation);
+app.get('/getLocation', getLocation);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
