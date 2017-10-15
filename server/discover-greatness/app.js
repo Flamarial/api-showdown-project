@@ -11,6 +11,7 @@ var deleteFriend = require('./routes/deleteFriend');
 var addFriend = require('./routes/addFriend');
 var updateLocation = require('./routes/updateLocation');
 var getLocation = require('./routes/getLocation');
+var registrationToken = require('./routes/registrationToken');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.get('/friends', friends);
 app.post('/addFriend', addFriend);
 app.post('/deleteFriend', deleteFriend);
 app.post('/updateLocation', updateLocation);
+app.post('/registrationToken', registrationToken);
 app.get('/getLocation', getLocation);
 
 // catch 404 and forward to error handler
@@ -52,7 +54,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3000, function () {
+app.listen(3000, '0.0.0.0', function () {
   console.log('Node app listening on port 3000!')
 })
 
