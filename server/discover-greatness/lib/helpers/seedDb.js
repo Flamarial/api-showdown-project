@@ -3,6 +3,42 @@
 const heredoc = require('heredoc'),
     sendQuery = require('./accessDb');
 
+const createTables = heredoc(function() {/*
+    CREATE TABLE friendships (
+        user_id integer,
+        friend_id integer,
+        key integer primary key,
+        foreign key(user_id) references users(key),
+        foreign key(friend_id) references users(key)
+    );
+
+    CREATE TABLE location (
+        key integer primary key,
+        longitude float,
+        latitude float,
+        user_id integer,
+        foreign key(user_id) references users(key)
+    );
+    CREATE TABLE users (
+        key integer primary key,
+        last_name text,
+        first_name text,
+        wallet_id text,
+        info text,
+        image_url text
+        location integer,
+        foreign key(location) references locations(key)
+    );
+    CREATE TABLE transactions (
+        key integer primary key,
+        merchant text,
+        description text,
+        amount float,
+        transaction_user integer,
+        foreign key(transaction_user) references users(key)
+    );
+*/});
+
 const seedUsers = heredoc(function () {/*
     INSERT INTO users ( first_name, last_name, wallet_id, info, image_url )
     VALUES
@@ -13,7 +49,7 @@ const seedUsers = heredoc(function () {/*
 */});
 
 const seedLocations = heredoc(function () {/*
-    INSERT INTO location ( longitude, latitude, user_id )
+    INSERT INTO locations ( longitude, latitude, user_id )
     VALUES
     (41.876742, -87.624386, 1),
     (41.892689, -87.672056, 2),
@@ -24,7 +60,7 @@ const seedLocations = heredoc(function () {/*
 const updateUsersWithLocation = function() {
     let locations;
     const getAllLocations = heredoc(function () {/*
-        SELECT * FROM location;
+        SELECT * FROM locations;
     */});
 
     const updateUserWithLocation = heredoc(function () {/*
@@ -91,6 +127,12 @@ const makeFriendships = function() {
 }
 
 if (!(sendQuery instanceof Error)) {
+    sendQuery(createTables, [], (err) => {
+        if (err) {
+            throw (err) 
+        } 
+    });
+
     sendQuery(seedUsers, [], (err) => {
         if (err) {
             throw (err) 
