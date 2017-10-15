@@ -1,4 +1,4 @@
-package com.apishowdown.discovergreatness;
+package com.apishowdown.discovergreatness.creditcard;
 
 public class CreditCard {
     private String number;
