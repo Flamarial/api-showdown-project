@@ -50,6 +50,16 @@ function getLocation(access_token) {
     );
 }
 
+function secondExample() {
+    var formattedRestaurantData = {
+        name: "Lucky Strike",
+        address: "322 E Illinois St, Chicago, IL 60611",
+        offerMessage: "Get a free pitcher of beer if 3 of your friends visit this location!",
+        expirationMessage: "Expires on October 17th, 2017"
+    }
+    sendPushNotifications(token, formattedRestaurantData);
+}
+
 function getLocationAuthenticated() {
     oauth.authenticatedRequest(getLocation);
 }
